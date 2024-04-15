@@ -8,10 +8,12 @@
   <title>cleano - Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  
 
   <!-- Favicons -->
   <link href="img/cleano2.png" rel="icon">
   <link href="img/cleano2.png" rel="apple-touch-icon">
+  <link rel="manifest" href="manifest.json">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -433,6 +435,24 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <!--Manifest-->
+  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="service-worker.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered:', registration);
+    })
+    .catch(error => {
+      console.error('Service Worker registration failed:', error);
+    });
+});
+}
+</script>
   
 </body>
 
